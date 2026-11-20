@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://eh3vvi66w1gv" path="res://scripts/main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://8poahyblrfxk" path="res://scripts/eiris.gd" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://cv5ebedpm73pw" path="res://assets/character.png" id="3_h2yge"]
+[ext_resource type="Texture2D" uid="uid://dfsgcsnppqyu7" path="res://assets/eiris/character.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://xrs5h15e0nfk" path="res://assets/eiris/still1.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://cxxvmm0ytyh82" path="res://assets/eiris/still2.png" id="5_272bh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dtx53"]
 radius = 20.999998
@@ -12,10 +14,24 @@ height = 118.0
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_h2yge")
+"texture": ExtResource("3_lquwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7mycd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_272bh")
 }],
 "loop": 1,
-"name": &"default",
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_lquwl")
+}],
+"loop": 1,
+"name": &"still(placeholder)",
 "speed": 5.0
 }]
 
@@ -40,6 +56,7 @@ shape = SubResource("CapsuleShape2D_dtx53")
 position = Vector2(0, -2.3841858e-07)
 scale = Vector2(0.38914028, 0.3891403)
 sprite_frames = SubResource("SpriteFrames_dtx53")
+animation = &"still(placeholder)"
 
 [node name="floor" type="StaticBody2D" parent="." unique_id=181129854]
 position = Vector2(2, 332)
