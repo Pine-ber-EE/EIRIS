@@ -6,11 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://xrs5h15e0nfk" path="res://assets/eiris/still1.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cxxvmm0ytyh82" path="res://assets/eiris/still2.png" id="5_272bh"]
 [ext_resource type="Texture2D" uid="uid://72p6pya7b2nm" path="res://assets/eiris/jump1.png" id="6_272bh"]
-[ext_resource type="Texture2D" uid="uid://c66allnqx443t" path="res://assets/eiris/jump2.png" id="7_5vw27"]
+[ext_resource type="Texture2D" uid="uid://iki0rmgme15i" path="res://assets/eiris/jump3.png" id="7_272bh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dtx53"]
 radius = 20.999998
 height = 118.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7mycd"]
+load_path = "res://.godot/imported/jump2.png-4452b33ea2099c138a8340cfcc7e77c8.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dtx53"]
 animations = [{
@@ -33,7 +36,10 @@ animations = [{
 "texture": ExtResource("6_272bh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_5vw27")
+"texture": SubResource("CompressedTexture2D_7mycd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_272bh")
 }],
 "loop": 1,
 "name": &"jump",
