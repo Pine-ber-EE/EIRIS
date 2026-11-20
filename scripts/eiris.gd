@@ -5,28 +5,36 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -700.0
 const gravity = 2
 
-var animation = 0
+var animation = ""
 
 #misc timers
 var idleTimer = 0
+var jumpTimer = 0
 
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
+	if $AnimatedSprite2D.animation == "jump":
+		if $AnimatedSprite2D.frame ==1:
+			$AnimatedSprite2D.pause()
+	print($AnimatedSprite2D.animation)
 	
-	
+	#timers:
+	jumpTimer = jumpTimer + delta
 	if is_on_floor():
 		idleTimer = idleTimer+delta
+	
+	if is_on_floor():
+		animation = "still(placeholder)"
 		if idleTimer>0.5:
-			print("yea")
 			$AnimatedSprite2D.play("idle")
 		else:
-			$AnimatedSprite2D.play("still(placeholder)")
+			anim()
 	else:
-		print("yea")
-		$AnimatedSprite2D.play("still(placeholder)")
+		animation = "jump"
+		anim()
 	
-	print(idleTimer)
+	#print(idleTimer)
 	
 	if not is_on_floor():
 		idleTimer=0
@@ -35,6 +43,7 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		idleTimer=0
+		jumpTimer=0
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -47,3 +56,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+	#print(jumpTimer)
+	
+func anim():
+	$AnimatedSprite2D.pause()
+	if animation == "jump":
+		if jumpTimer > 0.1:
+			$AnimatedSprite2D.animation ="jump"
+			$AnimatedSprite2D.frame = 1
+		else:
+			$AnimatedSprite2D.animation ="jump"
+	else:
+		$AnimatedSprite2D.animation="still(placeholder)"
