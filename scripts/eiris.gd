@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -700.0
+const JUMP_VELOCITY = -800.0
 const gravity = 2
 
 var animation = ""
@@ -20,11 +20,14 @@ var landTimer = 0
 
 
 func _physics_process(delta: float) -> void:
+	
+	print(velocity.y)
+	
 	# Add the gravity.
 	if $AnimatedSprite2D.animation == "jump":
 		if $AnimatedSprite2D.frame ==1:
 			$AnimatedSprite2D.pause()
-	print($AnimatedSprite2D.animation)
+	#print($AnimatedSprite2D.animation)
 	
 	#timers:
 	jumpTimer = jumpTimer + delta
@@ -63,7 +66,6 @@ func _physics_process(delta: float) -> void:
 		lastDirection="left"
 	if Input.is_action_just_pressed("ui_right"):
 		lastDirection="right"
-	print(lastDirection)
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("ui_left", "ui_right")
@@ -83,9 +85,15 @@ func anim():
 		if jumpTimer > 0.1:
 			$AnimatedSprite2D.animation ="jump"
 			if lastDirection == "left":
-				$AnimatedSprite2D.frame = 2
+				if velocity.y<300:
+					$AnimatedSprite2D.frame = 2
+				else:
+					$AnimatedSprite2D.frame = 4
 			if lastDirection == "right":
-				$AnimatedSprite2D.frame = 1
+				if velocity.y<300:
+					$AnimatedSprite2D.frame = 1
+				else:
+					$AnimatedSprite2D.frame = 3
 		else:
 			$AnimatedSprite2D.animation ="jump"
 	elif landTimer < 0.1:
