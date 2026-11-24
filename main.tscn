@@ -2,12 +2,25 @@
 
 [ext_resource type="Script" uid="uid://eh3vvi66w1gv" path="res://scripts/main.gd" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://8poahyblrfxk" path="res://scripts/eiris.gd" id="2_0xm2m"]
-[ext_resource type="Texture2D" uid="uid://dfsgcsnppqyu7" path="res://assets/eiris/character.png" id="3_lquwl"]
-[ext_resource type="Texture2D" uid="uid://xrs5h15e0nfk" path="res://assets/eiris/still1.png" id="4_7mycd"]
-[ext_resource type="Texture2D" uid="uid://cxxvmm0ytyh82" path="res://assets/eiris/still2.png" id="5_272bh"]
-[ext_resource type="Texture2D" uid="uid://72p6pya7b2nm" path="res://assets/eiris/jump1.png" id="6_272bh"]
-[ext_resource type="Texture2D" uid="uid://iki0rmgme15i" path="res://assets/eiris/jump3.png" id="7_272bh"]
+[ext_resource type="Texture2D" uid="uid://dfsgcsnppqyu7" path="res://assets/player/character.png" id="3_lquwl"]
+[ext_resource type="Texture2D" uid="uid://xrs5h15e0nfk" path="res://assets/player/still1.png" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://cxxvmm0ytyh82" path="res://assets/player/still2.png" id="5_272bh"]
+[ext_resource type="Texture2D" uid="uid://72p6pya7b2nm" path="res://assets/player/jump1.png" id="6_272bh"]
+[ext_resource type="Texture2D" uid="uid://iki0rmgme15i" path="res://assets/player/jump3.png" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://ip71xrjsxl5a" path="res://icon.svg" id="8_5vw27"]
+[ext_resource type="Texture2D" uid="uid://ds3yjo06rfpch" path="res://assets/player/eiris/eye.png" id="9_074og"]
+[ext_resource type="Texture2D" uid="uid://dqbmsytqn8gke" path="res://assets/player/eiris/eyewhites.png" id="9_cegan"]
+[ext_resource type="Texture2D" uid="uid://ce55vvpfspqqk" path="res://assets/birbEnemy/frame0.png" id="9_dg77c"]
+[ext_resource type="Texture2D" uid="uid://14g4c6tt4t5g" path="res://assets/player/eiris/blink1.png" id="10_cegan"]
+[ext_resource type="Texture2D" uid="uid://dvifpnm0ucnsk" path="res://assets/birbEnemy/frame1.png" id="10_ycdy4"]
+[ext_resource type="Texture2D" uid="uid://san0kjnltgt7" path="res://assets/player/eiris/blink2.png" id="11_82xsv"]
+[ext_resource type="Texture2D" uid="uid://bgkaijxxpf2e0" path="res://assets/birbEnemy/frame2.png" id="11_w48qg"]
+[ext_resource type="Texture2D" uid="uid://dn7haxj5l8mcm" path="res://assets/player/eiris/blink3.png" id="12_getpj"]
+[ext_resource type="Texture2D" uid="uid://cvwlscok6cd7o" path="res://assets/birbEnemy/frame3.png" id="12_vivmo"]
+[ext_resource type="Texture2D" uid="uid://cs3i7vxtyhmh1" path="res://assets/player/eiris/blink4.png" id="13_ryguw"]
+[ext_resource type="Texture2D" uid="uid://dipm0di1c3nvv" path="res://assets/player/eiris/close.png" id="14_d13ii"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dtx53"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("8_5vw27")
@@ -44,8 +57,6 @@ tile_size = Vector2i(24, 24)
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_5vw27")
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dtx53"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
 size = Vector2(44.999992, 96)
 
@@ -57,6 +68,12 @@ load_path = "res://.godot/imported/jump4.png-3b128c65565edea980739ea6bee24943.ct
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_kek77"]
 load_path = "res://.godot/imported/jump5.png-6ec0bab4f88ef00f9831d2b1e4ff2192.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_dg77c"]
+load_path = "res://.godot/imported/jump7.png-4b3c467114c670f9bfbd58564a14980d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ycdy4"]
+load_path = "res://.godot/imported/jump9.png-9d5762a0653323a29b1edf4fb180d2ab.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_dtx53"]
 animations = [{
@@ -89,6 +106,12 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_kek77")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_dg77c")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ycdy4")
 }],
 "loop": 1,
 "name": &"jump",
@@ -103,34 +126,115 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_632h5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_074og")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cegan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_82xsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_getpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_ryguw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d13ii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_getpj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_82xsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cegan")
+}],
+"loop": 1,
+"name": &"blink",
+"speed": 25.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1bkr4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_dg77c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ycdy4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w48qg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vivmo")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_632h5"]
+size = Vector2(47, 20)
+
 [node name="main" type="Node2D" unique_id=1666738709]
 script = ExtResource("1_ig7tw")
 
-[node name="TileMap" type="TileMap" parent="." unique_id=1275085313]
+[node name="start" type="Node2D" parent="." unique_id=1797289162]
+
+[node name="floor" type="StaticBody2D" parent="start" unique_id=181129854]
+position = Vector2(2, 332)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start/floor" unique_id=1552511545]
+shape = SubResource("WorldBoundaryShape2D_dtx53")
+
+[node name="TileMap" type="TileMap" parent="start" unique_id=1275085313]
+position = Vector2(1, 0)
 tile_set = SubResource("TileSet_kek77")
 format = 2
 layer_0/tile_data = PackedInt32Array(393214, 131072, 2, 393215, 131072, 2, 327680, 131072, 2, 327681, 131072, 2, 327682, 131072, 2, 327683, 131072, 2, 327684, 131072, 2, 196614, 131072, 2, 262150, 131072, 2, 327686, 131072, 2, 393222, 131072, 2, 327685, 131072, 2, 393221, 131072, 2, 458757, 131072, 2, 393220, 131072, 2, 393218, 131072, 2, 393216, 131072, 2, 458751, 131072, 2, 458750, 131072, 2, 393217, 131072, 2, 393219, 131072, 2, 458758, 131072, 2, 327687, 131072, 2, 262151, 131072, 2, 393223, 131072, 2, 458759, 131072, 2, 196615, 131072, 2, 131079, 131072, 2, 131080, 131072, 2, 196616, 131072, 2, 262152, 131072, 2, 327688, 131072, 2, 393224, 131072, 2, 458760, 131072, 2, 524296, 131072, 2, 393225, 131072, 2, 327689, 131072, 2, 262153, 131072, 2, 196617, 131072, 2, 131081, 131072, 2, 327690, 131072, 2, 393226, 131072, 2, 393227, 131072, 2, 327691, 131072, 2, 262155, 131072, 2, 262154, 131072, 2, 196618, 131072, 2, 131082, 131072, 2, 131083, 131072, 2, 196620, 131072, 2, 262156, 131072, 2, 131084, 131072, 2, 196619, 131072, 2, 196621, 131072, 2, 262157, 131072, 2, 327693, 131072, 2, 393229, 131072, 2, 393230, 131072, 2, 327694, 131072, 2, 393228, 131072, 2, 458761, 131072, 2, 458756, 131072, 2, 458755, 131072, 2, 458749, 131072, 2, 393213, 131072, 2, 393212, 131072, 2, 393211, 131072, 2, 393210, 131072, 2, 393209, 131072, 2, 393208, 131072, 2, 393207, 131072, 2, 393206, 131072, 2, 393205, 131072, 2, 262132, 131072, 2, 262131, 131072, 2, 327667, 131072, 2, 327666, 131072, 2, 327665, 131072, 2, 393201, 131072, 2, 393200, 131072, 2, 393202, 131072, 2, 393203, 131072, 2, 393204, 131072, 2, 458743, 131072, 2, 458744, 131072, 2, 458745, 131072, 2, 458746, 131072, 2, 458747, 131072, 2, 458748, 131072, 2, 327668, 131072, 2, 458737, 131072, 2, 458742, 131072, 2, 458741, 131072, 2, 458740, 131072, 2, 458739, 131072, 2, 458738, 131072, 2, 524282, 131072, 2, 524283, 131072, 2, 589819, 131072, 2, 589820, 131072, 2, 589821, 131072, 2, 589822, 131072, 2, 524286, 131072, 2, 524287, 131072, 2, 458752, 131072, 2, 458753, 131072, 2, 458754, 131072, 2, 524285, 131072, 2, 524284, 131072, 2, 131078, 131072, 2, 327692, 131072, 2, 524294, 131072, 2, 524295, 131072, 2, 524297, 131072, 2, 524298, 131072, 2, 458763, 131072, 2, 458764, 131072, 2, 458765, 131072, 2, 524292, 131072, 2, 524293, 131072, 2, 458762, 131072, 2, 524279, 131072, 2, 524278, 131072, 2, 524281, 131072, 2, 524280, 131072, 2, 589823, 131072, 2, 524288, 131072, 2, 327664, 131072, 2, 327663, 131072, 2, 262127, 131072, 2, 196591, 131072, 2, 196592, 131072, 2, 131056, 131072, 2, 131057, 131072, 2, 131058, 131072, 2, 131059, 131072, 2, 131060, 131072, 2, 196596, 131072, 2, 196595, 131072, 2, 262130, 131072, 2, 262129, 131072, 2, 262128, 131072, 2, 262126, 131072, 2, 262125, 131072, 2, 393199, 131072, 2, 524276, 131072, 2, 524277, 131072, 2, 589818, 131072, 2, 589817, 131072, 2, 196593, 131072, 2, 196594, 131072, 2, 65542, 131072, 2, 65543, 131072, 2, 6, 131072, 2, 7, 131072, 2, 458772, 131072, 2, 524308, 131072, 2, 589844, 131072, 2, 655380, 131072, 2, 655381, 131072, 2, 655382, 131072, 2, 589845, 131072, 2, 524309, 131072, 2, 458773, 131072, 2, 720917, 131072, 2, 720916, 131072, 2, 786450, 131072, 2, 786451, 131072, 2, 786452, 131072, 2, 786453, 131072, 2, 458774, 131072, 2, 524310, 131072, 2, 589846, 131072, 2, 720918, 131072, 2, 786454, 131072, 2, 393238, 131072, 2, 589847, 131072, 2, 655383, 131072, 2, 720919, 131072, 2, 720920, 131072, 2, 786456, 131072, 2, 851992, 131072, 2, 851991, 131072, 2, 786455, 131072, 2, 851993, 131072, 2, 851994, 131072, 2, 852002, 131072, 2, 852003, 131072, 2, 786467, 131072, 2, 786468, 131072, 2, 720932, 131072, 2, 655396, 131072, 2, 655397, 131072, 2, 589861, 131072, 2, 524325, 131072, 2, 458790, 131072, 2, 393254, 131072, 2, 327718, 131072, 2, 262182, 131072, 2, 196646, 131072, 2, 131110, 131072, 2, 131111, 131072, 2, 65575, 131072, 2, 39, 131072, 2, 40, 131072, 2, -65496, 131072, 2, -131032, 131072, 2, -131031, 131072, 2, -196567, 131072, 2, -262103, 131072, 2, -262102, 131072, 2, -262101, 131072, 2, -196565, 131072, 2, -196566, 131072, 2, -131030, 131072, 2, -65494, 131072, 2, 42, 131072, 2, 65577, 131072, 2, 131113, 131072, 2, 196649, 131072, 2, 262185, 131072, 2, 327721, 131072, 2, 393257, 131072, 2, 458793, 131072, 2, 458792, 131072, 2, 524328, 131072, 2, 589864, 131072, 2, 655400, 131072, 2, 720935, 131072, 2, 786471, 131072, 2, 786470, 131072, 2, 852006, 131072, 2, 852005, 131072, 2, 917541, 131072, 2, 917540, 131072, 2, 917539, 131072, 2, 524326, 131072, 2, 393255, 131072, 2, 327719, 131072, 2, 262183, 131072, 2, 196648, 131072, 2, 131112, 131072, 2, 41, 131072, 2, -65495, 131072, 2, 65576, 131072, 2, 589862, 131072, 2, 655398, 131072, 2, 589863, 131072, 2, 524327, 131072, 2, 131114, 131072, 2, 65578, 131072, 2, -65493, 131072, 2, -131029, 131072, 2, -131028, 131072, 2, -196564, 131072, 2, -196563, 131072, 2, -262099, 131072, 2, -262098, 131072, 2, -131027, 131072, 2, -65492, 131072, 2, 262184, 131072, 2, 393253, 131072, 2, 458789, 131072, 2, 458788, 131072, 2, 524324, 131072, 2, 524323, 131072, 2, 589859, 131072, 2, 655395, 131072, 2, 655394, 131072, 2, 720930, 131072, 2, 786465, 131072, 2, 786466, 131072, 2, 720931, 131072, 2, 589860, 131072, 2, 917538, 131072, 2, 917537, 131072, 2, 852001, 131072, 2, 524329, 131072, 2, -262100, 131072, 2, 458811, 131072, 2, 393276, 131072, 2, 327740, 131072, 2, 262205, 131072, 2, 196669, 131072, 2, 196670, 131072, 2, 131134, 131072, 2, 65598, 131072, 2, 62, 131072, 2, 63, 131072, 2, -65473, 131072, 2, -131009, 131072, 2, -196545, 131072, 2, -196544, 131072, 2, -262080, 131072, 2, -327616, 131072, 2, -393152, 131072, 2, -393151, 131072, 2, -458687, 131072, 2, -524223, 131072, 2, -589759, 131072, 2, -589758, 131072, 2, -655294, 131072, 2, -720830, 131072, 2, -720829, 131072, 2, -786365, 131072, 2, -851901, 131072, 2, -851900, 131072, 2, -917436, 131072, 2, -982972, 131072, 2, 524347, 131072, 2, 589883, 131072, 2, 589882, 131072, 2, -262097, 131072, 2, -262096, 131072, 2, -262095, 131072, 2, -262094, 131072, 2, -262093, 131072, 2)
 
-[node name="floor" type="StaticBody2D" parent="." unique_id=181129854]
-position = Vector2(2, 332)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" unique_id=1552511545]
-shape = SubResource("WorldBoundaryShape2D_dtx53")
-
-[node name="start" type="Node2D" parent="." unique_id=1797289162]
-
-[node name="eiris" type="CharacterBody2D" parent="start" unique_id=1936147627]
+[node name="player" type="CharacterBody2D" parent="start" unique_id=1936147627]
 script = ExtResource("2_0xm2m")
 
-[node name="Camera2D" type="Camera2D" parent="start/eiris" unique_id=643030050]
+[node name="Camera2D" type="Camera2D" parent="start/player" unique_id=643030050]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="start/eiris" unique_id=1538596768]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start/player" unique_id=1538596768]
 position = Vector2(-1.4999995, 21)
 scale = Vector2(1.0000001, 1)
 shape = SubResource("RectangleShape2D_5vw27")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="start/eiris" unique_id=254925789]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="start/player" unique_id=254925789]
 position = Vector2(0, -2.3841858e-07)
 scale = Vector2(0.38914028, 0.3891403)
 sprite_frames = SubResource("SpriteFrames_dtx53")
 animation = &"jump"
+
+[node name="eiris" type="Node2D" parent="start/player" unique_id=861206411]
+
+[node name="Sprite2D" type="Sprite2D" parent="start/player/eiris" unique_id=1598531575]
+texture = ExtResource("9_cegan")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="start/player/eiris" unique_id=1677657640]
+sprite_frames = SubResource("SpriteFrames_632h5")
+animation = &"blink"
+autoplay = "blink"
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="start" unique_id=1217690603]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="start/CharacterBody2D" unique_id=1868257331]
+position = Vector2(109, -35)
+scale = Vector2(0.21602792, 0.2160279)
+sprite_frames = SubResource("SpriteFrames_1bkr4")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="start/CharacterBody2D" unique_id=1692247217]
+position = Vector2(105, -32)
+shape = SubResource("RectangleShape2D_632h5")

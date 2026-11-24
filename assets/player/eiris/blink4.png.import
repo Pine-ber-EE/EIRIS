@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://72p6pya7b2nm"
-path="res://.godot/imported/jump1.png-c209007d052239a3c81d87456f12be0d.ctex"
+uid="uid://cs3i7vxtyhmh1"
+path="res://.godot/imported/blink4.png-3fc1246da8c539256b7f6aba17dda6c3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eiris/jump1.png"
-dest_files=["res://.godot/imported/jump1.png-c209007d052239a3c81d87456f12be0d.ctex"]
+source_file="res://assets/player/eiris/blink4.png"
+dest_files=["res://.godot/imported/blink4.png-3fc1246da8c539256b7f6aba17dda6c3.ctex"]
 
 [params]
 

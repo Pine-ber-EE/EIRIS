@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxxvmm0ytyh82"
-path="res://.godot/imported/still2.png-b438000dba1e05ee4dafca9971f342d5.ctex"
+uid="uid://dfsgcsnppqyu7"
+path="res://.godot/imported/character.png-92bdc3e33eff682e70d1029317244a61.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eiris/still2.png"
-dest_files=["res://.godot/imported/still2.png-b438000dba1e05ee4dafca9971f342d5.ctex"]
+source_file="res://assets/player/character.png"
+dest_files=["res://.godot/imported/character.png-92bdc3e33eff682e70d1029317244a61.ctex"]
 
 [params]
 

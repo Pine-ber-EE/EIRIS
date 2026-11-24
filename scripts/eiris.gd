@@ -85,8 +85,12 @@ func anim():
 		if jumpTimer > 0.1:
 			$AnimatedSprite2D.animation ="jump"
 			if lastDirection == "left":
-				if velocity.y<300:
+				if velocity.y<0:
 					$AnimatedSprite2D.frame = 2
+				elif velocity.y<300:
+					$AnimatedSprite2D.frame = 5
+				elif velocity.y<900:
+					$AnimatedSprite2D.frame = 6
 				else:
 					$AnimatedSprite2D.frame = 4
 			if lastDirection == "right":

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://xrs5h15e0nfk"
-path="res://.godot/imported/still1.png-b43b75e4470118af4c8dfc46dc0e610f.ctex"
+uid="uid://14g4c6tt4t5g"
+path="res://.godot/imported/blink1.png-0c37ac00e575ac3998f4d948ff20ef66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eiris/still1.png"
-dest_files=["res://.godot/imported/still1.png-b43b75e4470118af4c8dfc46dc0e610f.ctex"]
+source_file="res://assets/player/eiris/blink1.png"
+dest_files=["res://.godot/imported/blink1.png-0c37ac00e575ac3998f4d948ff20ef66.ctex"]
 
 [params]
 

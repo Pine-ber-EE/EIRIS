@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3qsgtyvhufp"
-path="res://.godot/imported/jump4.png-3b128c65565edea980739ea6bee24943.ctex"
+uid="uid://ce55vvpfspqqk"
+path="res://.godot/imported/frame0.png-92d1ebd9d1f7db7de0bdcb9939581a4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/eiris/jump4.png"
-dest_files=["res://.godot/imported/jump4.png-3b128c65565edea980739ea6bee24943.ctex"]
+source_file="res://assets/birbEnemy/frame0.png"
+dest_files=["res://.godot/imported/frame0.png-92d1ebd9d1f7db7de0bdcb9939581a4b.ctex"]
 
 [params]
 
