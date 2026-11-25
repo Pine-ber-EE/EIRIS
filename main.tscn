@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://d0qbucrtikvj0"]
 
 [ext_resource type="Script" uid="uid://eh3vvi66w1gv" path="res://scripts/main.gd" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://8poahyblrfxk" path="res://scripts/eiris.gd" id="2_0xm2m"]
+[ext_resource type="Script" uid="uid://8poahyblrfxk" path="res://scripts/player.gd" id="2_0xm2m"]
 [ext_resource type="Texture2D" uid="uid://dfsgcsnppqyu7" path="res://assets/player/character.png" id="3_lquwl"]
 [ext_resource type="Texture2D" uid="uid://xrs5h15e0nfk" path="res://assets/player/still1.png" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://cxxvmm0ytyh82" path="res://assets/player/still2.png" id="5_272bh"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://iki0rmgme15i" path="res://assets/player/jump3.png" id="7_272bh"]
 [ext_resource type="Texture2D" uid="uid://ip71xrjsxl5a" path="res://icon.svg" id="8_5vw27"]
 [ext_resource type="Texture2D" uid="uid://ds3yjo06rfpch" path="res://assets/player/eiris/eye.png" id="9_074og"]
+[ext_resource type="Script" uid="uid://48l2o30j0a84" path="res://scripts/eiris.gd" id="9_82xsv"]
 [ext_resource type="Texture2D" uid="uid://dqbmsytqn8gke" path="res://assets/player/eiris/eyewhites.png" id="9_cegan"]
 [ext_resource type="Texture2D" uid="uid://ce55vvpfspqqk" path="res://assets/birbEnemy/frame0.png" id="9_dg77c"]
 [ext_resource type="Texture2D" uid="uid://14g4c6tt4t5g" path="res://assets/player/eiris/blink1.png" id="10_cegan"]
@@ -156,10 +157,13 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("10_cegan")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"blink",
-"speed": 25.0
+"speed": 50.0
 }]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_82xsv"]
+load_path = "res://.godot/imported/outline.png-8585a27a6e96ba35eb92333424ed3a10.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1bkr4"]
 animations = [{
@@ -217,15 +221,24 @@ scale = Vector2(0.38914028, 0.3891403)
 sprite_frames = SubResource("SpriteFrames_dtx53")
 animation = &"jump"
 
-[node name="eiris" type="Node2D" parent="start/player" unique_id=861206411]
+[node name="eiris" type="Node2D" parent="start" unique_id=861206411]
+script = ExtResource("9_82xsv")
 
-[node name="Sprite2D" type="Sprite2D" parent="start/player/eiris" unique_id=1598531575]
+[node name="whites" type="Sprite2D" parent="start/eiris" unique_id=1598531575]
+position = Vector2(0, 18.999996)
+scale = Vector2(0.041025642, 0.041025635)
 texture = ExtResource("9_cegan")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="start/player/eiris" unique_id=1677657640]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="start/eiris" unique_id=1677657640]
+position = Vector2(0, 19)
+scale = Vector2(0.041025653, 0.041025642)
 sprite_frames = SubResource("SpriteFrames_632h5")
 animation = &"blink"
-autoplay = "blink"
+
+[node name="outline" type="Sprite2D" parent="start/eiris" unique_id=1737342101]
+position = Vector2(0, 18.000002)
+scale = Vector2(-0.041212313, -0.041212164)
+texture = SubResource("CompressedTexture2D_82xsv")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="start" unique_id=1217690603]
 
