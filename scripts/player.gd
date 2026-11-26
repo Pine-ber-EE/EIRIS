@@ -88,14 +88,18 @@ func anim():
 				if velocity.y<0:
 					$AnimatedSprite2D.frame = 2
 				elif velocity.y<300:
-					$AnimatedSprite2D.frame = 5
-				elif velocity.y<900:
 					$AnimatedSprite2D.frame = 6
+				elif velocity.y<900:
+					$AnimatedSprite2D.frame = 8
 				else:
 					$AnimatedSprite2D.frame = 4
 			if lastDirection == "right":
-				if velocity.y<300:
+				if velocity.y<0:
 					$AnimatedSprite2D.frame = 1
+				elif velocity.y<300:
+					$AnimatedSprite2D.frame = 5
+				elif velocity.y<900:
+					$AnimatedSprite2D.frame = 7
 				else:
 					$AnimatedSprite2D.frame = 3
 		else:

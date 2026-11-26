@@ -12,13 +12,17 @@
 [ext_resource type="Script" uid="uid://48l2o30j0a84" path="res://scripts/eiris.gd" id="9_82xsv"]
 [ext_resource type="Texture2D" uid="uid://dqbmsytqn8gke" path="res://assets/player/eiris/eyewhites.png" id="9_cegan"]
 [ext_resource type="Texture2D" uid="uid://ce55vvpfspqqk" path="res://assets/birbEnemy/frame0.png" id="9_dg77c"]
+[ext_resource type="Texture2D" uid="uid://235o3kqysxb" path="res://assets/player/jump8.png" id="9_getpj"]
+[ext_resource type="Texture2D" uid="uid://col2rke7b44bk" path="res://assets/player/jump6.png" id="9_ryguw"]
 [ext_resource type="Texture2D" uid="uid://14g4c6tt4t5g" path="res://assets/player/eiris/blink1.png" id="10_cegan"]
 [ext_resource type="Texture2D" uid="uid://dvifpnm0ucnsk" path="res://assets/birbEnemy/frame1.png" id="10_ycdy4"]
 [ext_resource type="Texture2D" uid="uid://san0kjnltgt7" path="res://assets/player/eiris/blink2.png" id="11_82xsv"]
 [ext_resource type="Texture2D" uid="uid://bgkaijxxpf2e0" path="res://assets/birbEnemy/frame2.png" id="11_w48qg"]
 [ext_resource type="Texture2D" uid="uid://dn7haxj5l8mcm" path="res://assets/player/eiris/blink3.png" id="12_getpj"]
 [ext_resource type="Texture2D" uid="uid://cvwlscok6cd7o" path="res://assets/birbEnemy/frame3.png" id="12_vivmo"]
+[ext_resource type="Texture2D" uid="uid://do4hrjadu8k05" path="res://assets/player/eiris/eiris.png" id="13_d13ii"]
 [ext_resource type="Texture2D" uid="uid://cs3i7vxtyhmh1" path="res://assets/player/eiris/blink4.png" id="13_ryguw"]
+[ext_resource type="Texture2D" uid="uid://rd5uiq5ucbr7" path="res://assets/player/eiris/highlights.png" id="14_1u8w0"]
 [ext_resource type="Texture2D" uid="uid://dipm0di1c3nvv" path="res://assets/player/eiris/close.png" id="14_d13ii"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dtx53"]
@@ -109,7 +113,13 @@ animations = [{
 "texture": SubResource("CompressedTexture2D_kek77")
 }, {
 "duration": 1.0,
+"texture": ExtResource("9_ryguw")
+}, {
+"duration": 1.0,
 "texture": SubResource("CompressedTexture2D_dg77c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_getpj")
 }, {
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_ycdy4")
@@ -228,6 +238,16 @@ script = ExtResource("9_82xsv")
 position = Vector2(0, 18.999996)
 scale = Vector2(0.041025642, 0.041025635)
 texture = ExtResource("9_cegan")
+
+[node name="eiris" type="Sprite2D" parent="start/eiris" unique_id=1203832605]
+position = Vector2(0, 17.999996)
+scale = Vector2(0.041025642, 0.041025635)
+texture = ExtResource("13_d13ii")
+
+[node name="highlights" type="Sprite2D" parent="start/eiris" unique_id=1188015607]
+position = Vector2(0, 19)
+scale = Vector2(0.037606854, 0.03760684)
+texture = ExtResource("14_1u8w0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="start/eiris" unique_id=1677657640]
 position = Vector2(0, 19)
